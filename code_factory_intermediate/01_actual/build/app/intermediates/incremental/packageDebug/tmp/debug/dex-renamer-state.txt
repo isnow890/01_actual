@@ -1,0 +1,4 @@
+#Mon Apr 10 23:35:54 KST 2023
+base.0=D\:\\repos\\code_factory_intermediate\\01_actual\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
