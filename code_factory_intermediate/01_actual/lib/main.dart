@@ -11,22 +11,27 @@ class _App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-            backgroundColor: Colors.white,
-            body: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomTextFormField(
-                  hintText: '이메일을 입력해주세요.',
-                  onChanged: (value) {},
-                ),
-                CustomTextFormField(
-                  hintText: '비밀번호를 입력해주세요.',
-                  obscureText: true,
-                  onChanged: (value) {},
-                ),
-              ],
-            )));
+      theme: ThemeData(
+        fontFamily: 'NotoSans',
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomTextFormField(
+              hintText: '이메일을 입력해주세요.',
+              onChanged: (value) {},
+            ),
+            CustomTextFormField(
+              hintText: '비밀번호를 입력해주세요.',
+              obscureText: true,
+              onChanged: (value) {},
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
