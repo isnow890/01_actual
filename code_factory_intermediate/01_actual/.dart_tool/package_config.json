@@ -47,7 +47,7 @@
       "name": "flutter",
       "rootUri": "file:///C:/src/flutter/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "flutter_lints",
@@ -59,7 +59,7 @@
       "name": "flutter_test",
       "rootUri": "file:///C:/src/flutter/packages/flutter_test",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "js",
@@ -75,19 +75,19 @@
     },
     {
       "name": "matcher",
-      "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.14",
+      "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.15",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "material_color_utilities",
-      "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/material_color_utilities-0.2.0",
+      "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/material_color_utilities-0.3.0",
       "packageUri": "lib/",
-      "languageVersion": "2.13"
+      "languageVersion": "2.17"
     },
     {
       "name": "meta",
-      "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.9.0",
+      "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.9.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -105,9 +105,9 @@
     },
     {
       "name": "source_span",
-      "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.9.1",
+      "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.10.0",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.18"
     },
     {
       "name": "stack_trace",
@@ -135,7 +135,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.4.18",
+      "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.5.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -152,7 +152,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-04-11T13:02:47.541622Z",
+  "generated": "2023-04-11T13:13:46.182196Z",
   "generator": "pub",
-  "generatorVersion": "3.0.0-348.0.dev"
+  "generatorVersion": "3.0.0-428.0.dev"
 }

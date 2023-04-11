@@ -62,7 +62,7 @@ flutter:
   assets:
     - asset/img/misc/
     - asset/img/food/
-    - asset/img/img/
+    - asset/img/logo/
     - asset/rive/
     - asset/svg/
   fonts:
