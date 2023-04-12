@@ -2,10 +2,12 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:actual/common/const/colors.dart';
+import 'package:actual/common/const/data.dart';
 import 'package:actual/common/layout/default_layout.dart';
 import 'package:actual/common/view/root_tab.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 import '../../common/component/custom_text_form_field.dart';
 
@@ -29,6 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final ip = Platform.isIOS ? simulatorIp : emulatorIp;
 
     final dio = Dio();
+
 
     return DefaultLayout(
       //SingleChildScrollView를 선언하여 키보드가 튀어나와도 화면 에러 안나도록
@@ -85,10 +88,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     //ID:비밀번호
                     final rawString = '$username:$password';
                     print(rawString);
+                    print(rawString);
+
 
                     //base64 변환방법
                     Codec<String, String> stringToBase64 = utf8.fuse(base64);
                     String token = stringToBase64.encode(rawString);
+
+                    print(rawString);
+
 
                     final resp = await dio.post(
                       'http://$ip/auth/login',
@@ -99,12 +107,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     );
 
+                    final refreshToken = resp.data['refreshToken'];
+                    final accessToken = resp.data['accessToken'];
+
+                    print(refreshToken);
+
+                    //스토리지 저장
+                    await storage.write(key: REFRESH_TOKEN_KEY, value: refreshToken);
+                    await storage.write(key:ACCESS_TOKEN_KEY, value: accessToken);
+
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (_) => RootTab(),
                       ),
                     );
-                    print(resp.data);
                   },
                   child: Text('로그인'),
                   style: ElevatedButton.styleFrom(
