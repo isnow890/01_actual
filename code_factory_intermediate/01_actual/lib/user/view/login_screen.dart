@@ -10,46 +10,59 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
-      child: SafeArea(
-        top: true,
-        bottom: true,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _Title(),
-            _SubTitle(),
-            //사이즈 2/3
-            Image.asset(
-              'asset/img/misc/logo.png',
-              width: MediaQuery.of(context).size.width / 3 ,
-              height:MediaQuery.of(context).size.height / 3 *1.3 ,
+      //SingleChildScrollView를 선언하여 키보드가 튀어나와도 화면 에러 안나도록
+      child: SingleChildScrollView(
+        //드래그 하면 키보드 집어넣기.
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        child: SafeArea(
+          top: true,
+          bottom: false,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
             ),
-            CustomTextFormField(
-              hintText: '이메일을 입력해주세요.',
-              onChanged: (value) {},
-            ),
-            CustomTextFormField(
-              hintText: '비밀번호를 입력해주세요.',
-              obscureText: true,
-              onChanged: (value) {},
-            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                _Title(),
+                const SizedBox(height: 16,),
+                _SubTitle(),
+                //사이즈 2/3
+                Image.asset(
+                  'asset/img/misc/logo.png',
+                  width: MediaQuery.of(context).size.width / 3,
+                  height: MediaQuery.of(context).size.height / 3 * 1.3,
+                ),
+                CustomTextFormField(
+                  hintText: '이메일을 입력해주세요.',
+                  onChanged: (value) {},
+                ),
+                const SizedBox(height: 16,),
 
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('로그인'),
-              style: ElevatedButton.styleFrom(
-                primary: PRIMARY_COLOR,
+                CustomTextFormField(
+                  hintText: '비밀번호를 입력해주세요.',
+                  obscureText: true,
+                  onChanged: (value) {},
+                ),
+                const SizedBox(height: 16,),
 
-              ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text('로그인'),
+                  style: ElevatedButton.styleFrom(
+                    primary: PRIMARY_COLOR,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text('회원가입'),
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.black,
+                  ),
+                ),
+              ],
             ),
-            TextButton(
-              onPressed: () {},
-              child: Text('회원가입'),
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.black,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
