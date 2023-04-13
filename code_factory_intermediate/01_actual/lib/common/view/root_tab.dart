@@ -9,8 +9,37 @@ class RootTab extends StatefulWidget {
   State<RootTab> createState() => _RootTabState();
 }
 
-class _RootTabState extends State<RootTab> {
+//controller 사용 위하여 with SingleTickerProviderStateMixin 선언
+class _RootTabState extends State<RootTab> with SingleTickerProviderStateMixin{
+
+
+  //나중에 입력이 됨. 그러므로 late 사용
+  late TabController controller;
   int index = 0;
+  //initState에 TabController 등록
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    //length -> children의 길이
+    controller = TabController(length: 4, vsync: this);
+    controller.addListener(tabListener);
+  }
+
+
+  void tabListener(){
+    setState(() => index = controller.index);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    controller.removeListener(tabListener);
+    super.dispose();
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
@@ -24,9 +53,11 @@ class _RootTabState extends State<RootTab> {
         type: BottomNavigationBarType.fixed,
         //탭했을때
         onTap: (int value) {
-          setState(() {
-            index = value;
-          });
+          index = value;
+          controller.animateTo(value);
+          // setState(() {
+          //   index = value;
+          // });
         },
         currentIndex: index,
         items: [
@@ -40,9 +71,17 @@ class _RootTabState extends State<RootTab> {
         ],
       ),
       title: '코팩 딜리버리',
-      child: Center(
-        child: Text('Root Tab'),
-      ),
+      //TabBar
+      child:  TabBarView(
+        //좌우로 스와이핑 기능 막기.
+        physics: NeverScrollableScrollPhysics(),
+          controller: controller,
+          children: [
+    Container(child:Center(child: Text('홈')),),
+    Container(child:Center(child: Text('음식')),),
+    Container(child:Center(child: Text('주문')),),
+    Container(child:Center(child: Text('프로필')),)
+    ]),
     );
   }
 }
