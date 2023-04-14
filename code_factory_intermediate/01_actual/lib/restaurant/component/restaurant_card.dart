@@ -99,7 +99,7 @@ class RestaurantCard extends StatelessWidget {
     );
   }
 
-  
+  //UTF-8 dot 표시
   renderDot(){
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
