@@ -1,23 +1,46 @@
 import 'package:actual/common/const/colors.dart';
+import 'package:actual/restaurant/model/restaurant_detail_model.dart';
 import 'package:flutter/material.dart';
 
+import '../../common/const/data.dart';
+
 class ProductCard extends StatelessWidget {
-  const ProductCard({Key? key}) : super(key: key);
+  final Image image;
+  final String name;
+  final String detail;
+  final int price;
+
+  factory ProductCard.fromModel({
+    required RestaurantProductModel model,
+  }) {
+    print('imgUrl ->${model.imgUrl}');
+
+    return ProductCard(
+        image: Image.network(
+          model.imgUrl,
+          width: 110,
+          height: 110,
+          fit: BoxFit.cover,
+        ),
+        name: model.name,
+        detail: model.detail,
+        price: model.price);
+  }
+
+  const ProductCard(
+      {Key? key,
+      required this.image,
+      required this.name,
+      required this.detail,
+      required this.price})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              'asset/img/food/ddeok_bok_gi.jpg',
-              width: 110,
-              height: 110,
-              fit: BoxFit.cover,
-            ),
-          ),
+          ClipRRect(borderRadius: BorderRadius.circular(8), child: image),
           SizedBox(
             width: 16,
           ),
@@ -27,18 +50,18 @@ class ProductCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  '떡볶이',
+                  name,
                   style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Text('전통 떡볶이의 정석!\n맛있습니다.',
+                Text(detail,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(color: BODY_TEXT_COLOR, fontSize: 14.0)),
                 Text(
-                  '10000',
+                  price.toString(),
                   style: TextStyle(
                     color: PRIMARY_COLOR,
                     fontWeight: FontWeight.w600,

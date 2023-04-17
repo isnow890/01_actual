@@ -22,6 +22,20 @@ class _LoginScreenState extends State<LoginScreen> {
   String username = '';
   String password = '';
 
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+
+    username = 'test@codefactory.ai';
+    password = 'testtest';
+
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
     final dio = Dio();
@@ -54,16 +68,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: MediaQuery.of(context).size.height / 3 * 1.3,
                 ),
                 CustomTextFormField(
+                  initValue: username,
                   hintText: '이메일을 입력해주세요.',
                   onChanged: (value) {
                     username = value;
                   },
+
                 ),
                 const SizedBox(
                   height: 16,
                 ),
 
                 CustomTextFormField(
+                  initValue: password,
                   hintText: '비밀번호를 입력해주세요.',
                   obscureText: true,
                   onChanged: (value) {
