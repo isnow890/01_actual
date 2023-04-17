@@ -1,3 +1,4 @@
+import 'package:actual/common/utils/data_utils.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../common/const/data.dart';
@@ -19,7 +20,7 @@ class RestaurantModel {
   //변형할 값을 JsonKey Annotation 사용함.
   //이후에 다시 빌드 실행해야함.
   @JsonKey(
-    fromJson:pathToUrl,
+    fromJson:DataUtils.pathToUrl,
   )
   final String thumbUrl;
   final List<String> tags;
@@ -48,9 +49,6 @@ class RestaurantModel {
   //To Json
   Map<String,dynamic> toJson()=>_$RestaurantModelToJson(this);
 
-
-  //From Json에서 변형해야할 Property를 위한 Static Method
-  static pathToUrl(String value)=> 'http://$ip/${value}';
 
 
   //
