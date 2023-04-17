@@ -9,7 +9,7 @@ part 'restaurant_model.g.dart';
 enum RestaurantPriceRange {
   expensive,
   medium,
-  cheap;
+  cheap,
 }
 
 @JsonSerializable()
@@ -24,7 +24,10 @@ class RestaurantModel {
   )
   final String thumbUrl;
   final List<String> tags;
-  final RestaurantPriceRange printRange;
+  // @JsonKey(
+  //   fromJson: DataUtils.findEnum,
+  // )
+  final RestaurantPriceRange priceRange;
   final double ratings;
   final int ratingsCount;
   final int deliveryTime;
@@ -35,7 +38,7 @@ class RestaurantModel {
     required this.name,
     required this.thumbUrl,
     required this.tags,
-    required this.printRange,
+    required this.priceRange,
     required this.ratings,
     required this.ratingsCount,
     required this.deliveryTime,
@@ -43,8 +46,11 @@ class RestaurantModel {
   });
 
   //From Json
-  factory RestaurantModel.fromJson(Map<String,dynamic> json)
-  => _$RestaurantModelFromJson(json);
+  factory RestaurantModel.fromJson(Map<String,dynamic> json) {
+
+
+    return _$RestaurantModelFromJson(json);
+  }
 
   //To Json
   Map<String,dynamic> toJson()=>_$RestaurantModelToJson(this);

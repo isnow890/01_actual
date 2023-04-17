@@ -18,16 +18,16 @@ class RestaurantDetailModel extends RestaurantModel {
     required super.name,
 
     @JsonKey(
-      fromJson: pathToUrl,
+      fromJson: DataUtils.pathToUrl,
     )
         required super.thumbUrl,
 
     required super.tags,
 
-    @JsonKey(
-      fromJson: findEnum,
-    )
-        required super.printRange,
+    // @JsonKey(
+    //   fromJson: DataUtils.findEnum,
+    // )
+        required super.priceRange,
     required super.ratings,
     required super.ratingsCount,
     required super.deliveryTime,
@@ -47,10 +47,7 @@ class RestaurantDetailModel extends RestaurantModel {
   // //To Json
   // Map<String,dynamic> toJson()=>_$RestaurantDetailModelToJson(this);
 
-  static pathToUrl(String value) => 'http://$ip/${value}';
 
-  static findEnum(String value) => RestaurantPriceRange.values
-      .firstWhere((element) => element.name == value);
 
 }
 

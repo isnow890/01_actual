@@ -170,6 +170,10 @@ lints
 2.17
 file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/lints-2.0.1/
 file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/lints-2.0.1/lib/
+logger
+2.12
+file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/logger-1.3.0/
+file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/logger-1.3.0/lib/
 logging
 2.18
 file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/logging-1.1.1/
@@ -214,6 +218,14 @@ pubspec_parse
 2.18
 file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/pubspec_parse-1.2.2/
 file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/pubspec_parse-1.2.2/lib/
+retrofit
+2.17
+file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/retrofit-4.0.1/
+file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/retrofit-4.0.1/lib/
+retrofit_generator
+2.17
+file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/retrofit_generator-5.0.0+1/
+file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/retrofit_generator-5.0.0+1/lib/
 shelf
 2.17
 file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/shelf-1.4.0/
@@ -262,6 +274,10 @@ timing
 2.14
 file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/timing-1.0.1/
 file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/timing-1.0.1/lib/
+tuple
+2.14
+file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/tuple-2.0.1/
+file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/tuple-2.0.1/lib/
 typed_data
 2.12
 file:///C:/Users/yangchanwoo/AppData/Local/Pub/Cache/hosted/pub.dev/typed_data-1.3.1/

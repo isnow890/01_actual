@@ -98,8 +98,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     //ID:비밀번호
                     final rawString = '$username:$password';
-                    print(rawString);
-                    print(rawString);
+                    //print(rawString);
+                    // print(rawString);
 
 
                     //base64 변환방법
@@ -121,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     final refreshToken = resp.data['refreshToken'];
                     final accessToken = resp.data['accessToken'];
 
-                    print(refreshToken);
+                    //print(refreshToken);
 
                     //스토리지 저장
                     await storage.write(key: REFRESH_TOKEN_KEY, value: refreshToken);
