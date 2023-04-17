@@ -1,4 +1,5 @@
 import 'package:actual/restaurant/model/restaurant_model.dart';
+import 'package:actual/restaurant/view/restaurant_detail_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +43,6 @@ class RestaurantScreen extends StatelessWidget {
                     final item = snapshot.data![index];
                     final pItem = RestaurantModel.fromJson(json: item);
 
-
                     // final pItem = RestaurantModel(
                     //     id: item['id'],
                     //     name: item['name'],
@@ -55,22 +55,15 @@ class RestaurantScreen extends StatelessWidget {
                     //     deliveryTime: item['deliveryTime'],
                     //     deliveryFee: item['deliveryFee']);
 
-                    return RestaurantCard(
-                      image: Image.network(pItem.thumbUrl,
-                          fit: BoxFit.cover),
-                      // image: Image.asset(
-                      //   'asset/img/food/ddeok_bok_gi.jpg'
-                      //   //As small as possible while still covering the entire target box
-                      //   ,
-                      //   fit: BoxFit.cover,
-                      // ),
-                      name: pItem.name,
-                      //List<String>.from으로 List<dynamic> 형태를 형변환 해줄 수 있음.
-                      tags: pItem.tags,
-                      ratingsCount: pItem.ratingsCount,
-                      deliveryTime: pItem.deliveryTime,
-                      deliveryFee: pItem.deliveryFee,
-                      ratings: pItem.ratings,
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => RestaurantDetailScreen(),
+                        ));
+                      },
+                      child: RestaurantCard.fromModel(
+                        model: pItem,
+                      ),
                     );
                   },
                 );
