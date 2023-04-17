@@ -59,6 +59,8 @@ class _SplashScreenState extends State<SplashScreen> {
             builder: (_) => LoginScreen(),
           ),
           (route) => false);
+
+
     }
   }
 
