@@ -1,3 +1,4 @@
+import 'package:actual/common/dio/dio.dart';
 import 'package:actual/common/layout/default_layout.dart';
 import 'package:actual/restaurant/component/restaurant_card.dart';
 import 'package:actual/restaurant/model/restaurant_detail_model.dart';
@@ -15,7 +16,11 @@ class RestaurantDetailScreen extends StatelessWidget {
 
   Future<RestaurantDetailModel> getRestaurantDetail() async {
     final dio = Dio();
-    final accessToken = await storage.read(key: ACCESS_TOKEN_KEY);
+
+    //인터셉터 추가
+    dio.interceptors.add(CustomInterceptor(storage: storage),);
+
+    // final accessToken = await storage.read(key: ACCESS_TOKEN_KEY);
     final repository =
         RestaurantRepository(dio, baseUrl: 'http://$ip/restaurant');
     return repository.getRestaurantDetail(id: id);

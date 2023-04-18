@@ -71,9 +71,6 @@ class RestaurantProductModel {
       required this.price});
 
 
-
-
-
   factory RestaurantProductModel.fromJson(Map<String,dynamic> json)
   =>_$RestaurantProductModelFromJson(json);
 
