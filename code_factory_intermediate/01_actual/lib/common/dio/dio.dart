@@ -21,9 +21,10 @@ class CustomInterceptor extends Interceptor {
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     print('[REQ] [${options.method}] ${options.uri}');
+    print('시작');
 
+    print(options.headers['accessToken']);
     if (options.headers['accessToken'] == 'true') {
-      print('시작');
       options.headers.remove('accessToken');
       final token = await storage.read(key: ACCESS_TOKEN_KEY);
       options.headers.addAll({
@@ -32,9 +33,8 @@ class CustomInterceptor extends Interceptor {
     }
 
     if (options.headers['refreshToken'] == 'true') {
-      print('시작');
       options.headers.remove('refreshToken');
-      final token = await storage.read(key: ACCESS_TOKEN_KEY);
+      final token = await storage.read(key: REFRESH_TOKEN_KEY);
       options.headers.addAll({
         'authorization': 'Bearer $token',
       });
@@ -44,12 +44,23 @@ class CustomInterceptor extends Interceptor {
     return super.onRequest(options, handler);
   }
 
+  // 2)응답을 받을때
+  @override
+  void onResponse(Response response, ResponseInterceptorHandler handler) {
+    print('[RES] [${response.requestOptions.method}] ${response.requestOptions.uri}');
+
+    // TODO: implement onResponse
+    return super.onResponse(response, handler);
+  }
+
+
 // 3)에러가 났을때
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) async {
     //401 에러가 났을때 (status code)
     //토큰을 재발급 받는 시도를 하고 토큰이 재발급되면
     //다시 새로운 토큰으로 요청.
+
     print('[ERR] [${err.requestOptions.method}] ${err.requestOptions.uri}');
 
     final refreshToken = await storage.read(key: REFRESH_TOKEN_KEY);
