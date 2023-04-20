@@ -1,3 +1,4 @@
+import 'package:actual/common/dio/dio.dart';
 import 'package:actual/restaurant/model/restaurant_model.dart';
 import 'package:actual/restaurant/view/restaurant_detail_screen.dart';
 import 'package:dio/dio.dart';
@@ -11,6 +12,10 @@ class RestaurantScreen extends StatelessWidget {
 
   Future<List> paginateRestaurant() async {
     final dio = Dio();
+
+    dio.interceptors.add(
+      CustomInterceptor(storage: storage),
+    );
     final accessToken = await storage.read(key: ACCESS_TOKEN_KEY);
 
     final resp = await dio.get('http://$ip/restaurant',
@@ -28,7 +33,7 @@ class RestaurantScreen extends StatelessWidget {
           child: FutureBuilder(
               future: paginateRestaurant(),
               builder: (context, AsyncSnapshot<List> snapshot) {
-                print(snapshot.data);
+                //print(snapshot.data);
                 // print(snapshot.error);
                 if (!snapshot.hasData) {
                   return CircularProgressIndicator();
@@ -58,7 +63,8 @@ class RestaurantScreen extends StatelessWidget {
                     return GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => RestaurantDetailScreen(id:pItem.id,
+                          builder: (context) => RestaurantDetailScreen(
+                            id: pItem.id,
                           ),
                         ));
                       },
