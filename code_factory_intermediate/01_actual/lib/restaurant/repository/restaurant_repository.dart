@@ -26,6 +26,8 @@ abstract class RestaurantRepository {
   @Headers({'accessToken':'true'})
   Future<CursorPagination<RestaurantModel>> paginate();
 
+
+
   @GET('/{id}')
   @Headers({'accessToken':'true'})
   Future<RestaurantDetailModel> getRestaurantDetail({
