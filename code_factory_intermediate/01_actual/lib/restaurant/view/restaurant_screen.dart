@@ -15,20 +15,24 @@ class RestaurantScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final data = ref.watch(restaurantProvider); //계속 생성이 된 이후에 기억이 되므로.
 
-    if (data.length == 0) {
+    //로딩일때
+    if (data is CursorPaginationLoading){
       return Center(
         child: CircularProgressIndicator(),
       );
     }
 
+    final cp = data as CursorPagination;
+
+
     return ListView.separated(
-      itemCount: data!.length,
+      itemCount: cp!.data.length,
       separatorBuilder: (context, index) => SizedBox(
         height: 16.0,
       ),
       itemBuilder: (context, index) {
         //parsed
-        final pItem = data[index];
+        final pItem = cp.data[index];
 
         return GestureDetector(
           onTap: () {
