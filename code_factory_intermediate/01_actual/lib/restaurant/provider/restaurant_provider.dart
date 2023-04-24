@@ -2,11 +2,13 @@ import 'package:actual/restaurant/model/restaurant_model.dart';
 import 'package:actual/restaurant/repository/restaurant_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../common/model/cursor_pagination_model.dart';
+
 final restaurantProvider =
-    StateNotifierProvider<RestaurantStateNotifier, List<RestaurantModel>>(
+    StateNotifierProvider<RestaurantStateNotifier, CursorPagination>(
   (ref) {
     final repository = ref.watch(restaurantRepositoryProvider);
-    final notifier = RestaurantStateNotifier(repository: repository);
+    final notifier = CursorPagination(meta: null, data: []);
     return notifier;
   },
 );
