@@ -62,11 +62,24 @@ class _RestaurantScreenState extends ConsumerState<RestaurantScreen> {
 
     return ListView.separated(
       controller: controller,
-      itemCount: cp!.data.length,
+      itemCount: cp!.data.length + 1,
       separatorBuilder: (context, index) => SizedBox(
         height: 16.0,
       ),
       itemBuilder: (context, index) {
+        if (index == cp.data.length) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+              vertical: 8.0,
+            ),
+            child: Center(
+                child: data is CursorPaginationFetchingMore
+                    ? CircularProgressIndicator()
+                    : Text('마지막 데이터입니다.')),
+          );
+        }
+
         //parsed
         final pItem = cp.data[index];
 
