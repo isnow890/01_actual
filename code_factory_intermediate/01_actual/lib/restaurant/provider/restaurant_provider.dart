@@ -1,4 +1,4 @@
-import 'package:actual/restaurant/model/restaurant_model.dart';
+import 'package:actual/common/model/pagination_params.dart';
 import 'package:actual/restaurant/repository/restaurant_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -24,9 +24,11 @@ class RestaurantStateNotifier extends StateNotifier<CursorPaginationBase> {
   void paginate({
     int fetchCount = 20,
     // 추가로 데이터 더 가져오기.
+
     // true - 추가로 데이터 더 가져옴
     // false - 새로고침 (현재 상태를 덮어씌움)
     bool fetchMore = false,
+
     // 강제로 다시 로딩하기
     // true - CursorPaginationLoading()
     // 화면에 있는 데이터를 다 지우고 로딩함.
@@ -45,9 +47,9 @@ class RestaurantStateNotifier extends StateNotifier<CursorPaginationBase> {
     // 2) 로딩중 - fetchMore : true
     //     fetchMore가 아닐때 - 새로고침의 의도가 있을 수 있다.
     //Pagination을 한번이라도 갖고 있는 상황일 경우에
-    if (state is CursorPagination && !forceRefetch){
+    if (state is CursorPagination && !forceRefetch) {
       final pState = state as CursorPagination;
-      if (!pState.meta.hasMore){
+      if (!pState.meta.hasMore) {
         return;
       }
     }
@@ -58,13 +60,37 @@ class RestaurantStateNotifier extends StateNotifier<CursorPaginationBase> {
     final isFetchingMore = state is CursorPaginationFetchingMore;
 
     //2번 반환 상황
-    if (fetchMore && (isLoading || isRefetching || isFetchingMore)){
+    if (fetchMore && (isLoading || isRefetching || isFetchingMore)) {
       return;
     }
 
+    // PaginationParams 생성
+    PaginationParams paginationParams = PaginationParams(
+      count: fetchCount,
+    );
+
+    // fetchMore
+    // 데이터를 추가로 더 가져오는 상황
+    if (fetchMore) {
+      final pState = (state as CursorPagination);
+      state =
+          CursorPaginationFetchingMore(meta: pState.meta, data: pState.data);
+
+      paginationParams = paginationParams.copyWith(
+        after: pState.data.last.id,
+      );
+    }
 
 
-    // final resp = await repository.paginate();
-    // state = resp;
+    final resp = await repository.paginate(paginationParams: paginationParams);
+
+    if (state is CursorPaginationFetchingMore){
+      final pState = state as CursorPaginationFetchingMore;
+      state =resp.copywith(
+        //기존에 있던 데이터 + 새로운 데이터가 추가됨.
+        data : [...pState.data,
+        ...resp.data,]
+      );
+    }
   }
 }
