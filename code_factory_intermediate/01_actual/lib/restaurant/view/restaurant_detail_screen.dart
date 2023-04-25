@@ -11,14 +11,28 @@ import '../../common/const/data.dart';
 import '../../product/component/product_card.dart';
 import '../model/restaurant_model.dart';
 
-class RestaurantDetailScreen extends ConsumerWidget {
+class RestaurantDetailScreen extends ConsumerStatefulWidget {
   final String id;
 
   const RestaurantDetailScreen({Key? key, required this.id}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(restaurantDetailProvider(id));
+  ConsumerState<RestaurantDetailScreen> createState() => _RestaurantDetailScreenState();
+}
+
+class _RestaurantDetailScreenState extends ConsumerState<RestaurantDetailScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ref.read(restaurantProvider.notifier).getDetail(id: widget.id);
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    final state = ref.watch(restaurantDetailProvider(widget.id));
 
     if (state == null) {
       return DefaultLayout(
@@ -34,8 +48,10 @@ class RestaurantDetailScreen extends ConsumerWidget {
       child: CustomScrollView(
         slivers: [
           renderTop(model: state!),
-          // renderLabel(),
-          // renderProducts(products: data!.products),
+          if (state is RestaurantDetailModel)
+            renderLabel(),
+          if (state is RestaurantDetailModel)
+           renderProducts(products: state.products),
         ],
       ),
     );
