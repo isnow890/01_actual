@@ -1,13 +1,11 @@
-import 'package:actual/common/dio/dio.dart';
 import 'package:actual/common/layout/default_layout.dart';
 import 'package:actual/restaurant/component/restaurant_card.dart';
 import 'package:actual/restaurant/model/restaurant_detail_model.dart';
 import 'package:actual/restaurant/provider/restaurant_provider.dart';
-import 'package:actual/restaurant/repository/restaurant_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:skeletons/skeletons.dart';
 
-import '../../common/const/data.dart';
 import '../../product/component/product_card.dart';
 import '../model/restaurant_model.dart';
 
@@ -17,18 +15,18 @@ class RestaurantDetailScreen extends ConsumerStatefulWidget {
   const RestaurantDetailScreen({Key? key, required this.id}) : super(key: key);
 
   @override
-  ConsumerState<RestaurantDetailScreen> createState() => _RestaurantDetailScreenState();
+  ConsumerState<RestaurantDetailScreen> createState() =>
+      _RestaurantDetailScreenState();
 }
 
-class _RestaurantDetailScreenState extends ConsumerState<RestaurantDetailScreen> {
-
+class _RestaurantDetailScreenState
+    extends ConsumerState<RestaurantDetailScreen> {
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     ref.read(restaurantProvider.notifier).getDetail(id: widget.id);
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -41,18 +39,39 @@ class _RestaurantDetailScreenState extends ConsumerState<RestaurantDetailScreen>
       ));
     }
 
-
-
     return DefaultLayout(
       title: '불타는 떡볶이',
       child: CustomScrollView(
         slivers: [
           renderTop(model: state!),
+          if (state is! RestaurantDetailModel)
+          renderLoading(),
+          if (state is RestaurantDetailModel) renderLabel(),
           if (state is RestaurantDetailModel)
-            renderLabel(),
-          if (state is RestaurantDetailModel)
-           renderProducts(products: state.products),
+            renderProducts(products: state.products),
         ],
+      ),
+    );
+  }
+
+  SliverPadding renderLoading() {
+    return SliverPadding(
+      padding: EdgeInsets.symmetric(horizontal: 16.0,vertical: 16.0,),
+      sliver: SliverList(
+        delegate: SliverChildListDelegate(
+          List.generate(
+            3,
+            (index) => Padding(
+              padding: const EdgeInsets.only(bottom: 32.0),
+              child: SkeletonParagraph(
+                style: SkeletonParagraphStyle(
+                  lines: 5,
+                  padding: EdgeInsets.zero,
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
