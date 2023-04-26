@@ -51,8 +51,7 @@ class _RestaurantDetailScreenState
             renderProducts(products: state.products),
           SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
-            sliver
-                : SliverToBoxAdapter(
+            sliver: SliverToBoxAdapter(
               child: RatingCard(
                 avartarImage: AssetImage('asset/img/logo.codefactory_logo.png'),
                 images: [],
