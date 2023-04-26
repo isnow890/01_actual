@@ -2,8 +2,6 @@ import 'package:actual/common/utils/data_utils.dart';
 import 'package:actual/restaurant/model/restaurant_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../common/const/data.dart';
-
 //import 부분 추가
 part 'restaurant_detail_model.g.dart';
 
@@ -16,18 +14,16 @@ class RestaurantDetailModel extends RestaurantModel {
   RestaurantDetailModel({
     required super.id,
     required super.name,
-
     @JsonKey(
       fromJson: DataUtils.pathToUrl,
     )
         required super.thumbUrl,
-
     required super.tags,
 
     // @JsonKey(
     //   fromJson: DataUtils.findEnum,
     // )
-        required super.priceRange,
+    required super.priceRange,
     required super.ratings,
     required super.ratingsCount,
     required super.deliveryTime,
@@ -36,19 +32,14 @@ class RestaurantDetailModel extends RestaurantModel {
     required this.products,
   });
 
-  
+  factory RestaurantDetailModel.fromJson(Map<String, dynamic> json) =>
+      _$RestaurantDetailModelFromJson(json);
 
-  factory RestaurantDetailModel.fromJson(Map<String,dynamic> json)
-  =>_$RestaurantDetailModelFromJson(json);
-  
-  // //From Json
-  // factory RestaurantDetailModel.fromJson(Map<String,dynamic> json)
-  // => _$RestaurantDetailModelFromJson(json);
-  // //To Json
-  // Map<String,dynamic> toJson()=>_$RestaurantDetailModelToJson(this);
-
-
-
+// //From Json
+// factory RestaurantDetailModel.fromJson(Map<String,dynamic> json)
+// => _$RestaurantDetailModelFromJson(json);
+// //To Json
+// Map<String,dynamic> toJson()=>_$RestaurantDetailModelToJson(this);
 }
 
 @JsonSerializable()
@@ -70,12 +61,8 @@ class RestaurantProductModel {
       required this.detail,
       required this.price});
 
-
-  factory RestaurantProductModel.fromJson(Map<String,dynamic> json)
-  =>_$RestaurantProductModelFromJson(json);
-
-
-
+  factory RestaurantProductModel.fromJson(Map<String, dynamic> json) =>
+      _$RestaurantProductModelFromJson(json);
 
 //
 // factory RestaurantProductModel.fromJson({
