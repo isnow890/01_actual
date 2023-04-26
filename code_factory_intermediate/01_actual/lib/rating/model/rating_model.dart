@@ -21,4 +21,9 @@ class RatingModel implements IModelWithId{
       required this.rating,
       required this.content,
       required this.imgUrls});
+
+
+  factory RatingModel.fromJson(Map<String,dynamic> json)
+  =>_$RatingModelFromJson(json);
+
 }
