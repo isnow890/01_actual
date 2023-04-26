@@ -6,6 +6,7 @@ import 'package:actual/common/model/cursor_pagination_model.dart';
 import 'package:actual/common/model/pagination_params.dart';
 import 'package:actual/restaurant/model/restaurant_detail_model.dart';
 import 'package:actual/restaurant/model/restaurant_model.dart';
+import 'package:actual/restaurant/repository/restaurant_rating_repository.dart';
 import 'package:dio/dio.dart' hide Headers;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:retrofit/retrofit.dart';
@@ -14,6 +15,13 @@ import '../../common/const/data.dart';
 
 //2. part 선언하기
 part 'restaurant_repository.g.dart';
+
+final restaurantRatingRepositoryProvider =
+    Provider.family<RestaurantRatingRepository, String>((ref, id) {
+  final dio = ref.watch(dioProvider);
+  return RestaurantRatingRepository(dio,
+      baseUrl: 'http://$ip/restaurant/$id/rating');
+});
 
 final restaurantRepositoryProvider = Provider<RestaurantRepository>((ref) {
   //똑같은 dio 인스턴스를 부르기 위하여
