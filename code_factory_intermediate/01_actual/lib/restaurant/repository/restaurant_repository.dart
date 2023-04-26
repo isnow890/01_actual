@@ -12,6 +12,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../common/const/data.dart';
+import '../../common/repository/base_pagination_repository.dart';
 
 //2. part 선언하기
 part 'restaurant_repository.g.dart';
@@ -29,7 +30,7 @@ final restaurantRepositoryProvider = Provider<RestaurantRepository>((ref) {
 
 //3.RestApi Annotation 적용하기
 @RestApi()
-abstract class RestaurantRepository {
+abstract class RestaurantRepository implements IBasePaginationRepository<RestaurantModel> {
   //4 생성자 넣기
   //http://$ip/restaurant
   factory RestaurantRepository(Dio dio, {String baseUrl}) =
