@@ -7,4 +7,7 @@ class DataUtils{
   static findEnum(String value) => RestaurantPriceRange.values
       .firstWhere((element) => element.name == value);
 
+  static listPathsToUrls(List<String> paths)=> paths.map((e) => pathToUrl(e)).toList();
+
+
 }
