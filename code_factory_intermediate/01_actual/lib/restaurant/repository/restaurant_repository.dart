@@ -16,12 +16,6 @@ import '../../common/const/data.dart';
 //2. part 선언하기
 part 'restaurant_repository.g.dart';
 
-final restaurantRatingRepositoryProvider =
-    Provider.family<RestaurantRatingRepository, String>((ref, id) {
-  final dio = ref.watch(dioProvider);
-  return RestaurantRatingRepository(dio,
-      baseUrl: 'http://$ip/restaurant/$id/rating');
-});
 
 final restaurantRepositoryProvider = Provider<RestaurantRepository>((ref) {
   //똑같은 dio 인스턴스를 부르기 위하여

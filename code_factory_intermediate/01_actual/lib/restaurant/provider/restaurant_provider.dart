@@ -26,6 +26,8 @@ StateNotifierProvider<RestaurantStateNotifier, CursorPaginationBase>(
   },
 );
 
+
+
 class RestaurantStateNotifier extends StateNotifier<CursorPaginationBase> {
   final RestaurantRepository repository;
 
