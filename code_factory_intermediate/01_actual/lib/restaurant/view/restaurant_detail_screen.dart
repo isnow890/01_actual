@@ -1,4 +1,5 @@
 import 'package:actual/common/layout/default_layout.dart';
+import 'package:actual/rating/component/rating_card.dart';
 import 'package:actual/restaurant/component/restaurant_card.dart';
 import 'package:actual/restaurant/model/restaurant_detail_model.dart';
 import 'package:actual/restaurant/provider/restaurant_provider.dart';
@@ -44,11 +45,23 @@ class _RestaurantDetailScreenState
       child: CustomScrollView(
         slivers: [
           renderTop(model: state!),
-          if (state is! RestaurantDetailModel)
-          renderLoading(),
+          if (state is! RestaurantDetailModel) renderLoading(),
           if (state is RestaurantDetailModel) renderLabel(),
           if (state is RestaurantDetailModel)
             renderProducts(products: state.products),
+          SliverPadding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            sliver
+                : SliverToBoxAdapter(
+              child: RatingCard(
+                avartarImage: AssetImage('asset/img/logo.codefactory_logo.png'),
+                images: [],
+                rating: 5,
+                email: 'jc@codefactory.ai',
+                content: '맛있습니다.',
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -56,7 +69,10 @@ class _RestaurantDetailScreenState
 
   SliverPadding renderLoading() {
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0,vertical: 16.0,),
+      padding: EdgeInsets.symmetric(
+        horizontal: 16.0,
+        vertical: 16.0,
+      ),
       sliver: SliverList(
         delegate: SliverChildListDelegate(
           List.generate(

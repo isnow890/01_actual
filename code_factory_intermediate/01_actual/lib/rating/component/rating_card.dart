@@ -1,0 +1,112 @@
+import 'package:actual/common/const/colors.dart';
+import 'package:flutter/material.dart';
+
+class RatingCard extends StatelessWidget {
+  //NetworkImage
+  //AssetImage
+  //CircleAvatar  프로바이더 사용시 ImageProvider 사용
+  final ImageProvider avartarImage;
+
+  // 리스트로 위젯 이미지를 보여줄때
+  final List<Image> images;
+
+  // 별점
+  final int rating;
+  final String email;
+
+  //리뷰내용
+  final String content;
+
+  const RatingCard(
+      {Key? key,
+      required this.avartarImage,
+      required this.images,
+      required this.rating,
+      required this.email,
+      required this.content})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        _Header(
+          avartarImage: avartarImage,
+          rating: rating,
+          email: email,
+        ),
+        _Body(),
+        _Images()
+      ],
+    );
+  }
+}
+
+class _Header extends StatelessWidget {
+  final ImageProvider avartarImage;
+  final int rating;
+  final String email;
+
+  const _Header(
+      {Key? key,
+      required this.avartarImage,
+      required this.rating,
+      required this.email})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        CircleAvatar(
+          backgroundImage: avartarImage,
+          radius: 12.0,
+        ),
+        const SizedBox(width: 8.0,),
+
+        Expanded(
+          child: Text(
+            email,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 12.0,
+              color: Colors.black,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        ...List.generate(
+          5,
+          (index) => Icon(
+            index < rating ? Icons.star : Icons.star_border_outlined,
+            color: PRIMARY_COLOR,
+          ),
+        ),
+        // List.generate(5, (index) => Icon((Icons.star)))
+        // Icon(Icons.star),
+        // Icon(Icons.star),
+        // Icon(Icons.star),
+        // Icon(Icons.star),
+        // Icon(Icons.star),
+      ],
+    );
+  }
+}
+
+class _Body extends StatelessWidget {
+  const _Body({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class _Images extends StatelessWidget {
+  const _Images({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
