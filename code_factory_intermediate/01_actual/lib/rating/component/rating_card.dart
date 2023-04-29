@@ -2,6 +2,8 @@ import 'package:actual/common/const/colors.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
+import '../model/rating_model.dart';
+
 class RatingCard extends StatelessWidget {
   //NetworkImage
   //AssetImage
@@ -18,14 +20,25 @@ class RatingCard extends StatelessWidget {
   //리뷰내용
   final String content;
 
-  const RatingCard(
-      {Key? key,
-      required this.avartarImage,
-      required this.images,
-      required this.rating,
-      required this.email,
-      required this.content})
+  const RatingCard({Key? key,
+    required this.avartarImage,
+    required this.images,
+    required this.rating,
+    required this.email,
+    required this.content})
       : super(key: key);
+
+  factory RatingCard.fromModel({
+    required RatingModel model
+  }){
+    return RatingCard(avartarImage: NetworkImage(
+      model.user.imageUrl,
+    ),
+        images: model.imgUrls.map((e) => Image.network(e)).toList(),
+        rating: model.rating,
+        email: model.user.username,
+        content: model.content);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,11 +72,10 @@ class _Header extends StatelessWidget {
   final int rating;
   final String email;
 
-  const _Header(
-      {Key? key,
-      required this.avartarImage,
-      required this.rating,
-      required this.email})
+  const _Header({Key? key,
+    required this.avartarImage,
+    required this.rating,
+    required this.email})
       : super(key: key);
 
   @override
@@ -91,10 +103,11 @@ class _Header extends StatelessWidget {
         ),
         ...List.generate(
           5,
-          (index) => Icon(
-            index < rating ? Icons.star : Icons.star_border_outlined,
-            color: PRIMARY_COLOR,
-          ),
+              (index) =>
+              Icon(
+                index < rating ? Icons.star : Icons.star_border_outlined,
+                color: PRIMARY_COLOR,
+              ),
         ),
         // List.generate(5, (index) => Icon((Icons.star)))
         // Icon(Icons.star),
@@ -142,7 +155,8 @@ class _Images extends StatelessWidget {
       //map 인덱스 받을수 있음.
       children: images
           .mapIndexed(
-            (index, e) => Padding(
+            (index, e) =>
+            Padding(
               padding: EdgeInsets.only(
                   right: index == images.length - 1 ? 0.0 : 16.0),
               child: ClipRRect(
@@ -150,7 +164,7 @@ class _Images extends StatelessWidget {
                 child: e,
               ),
             ),
-          )
+      )
           .toList(),
     );
   }

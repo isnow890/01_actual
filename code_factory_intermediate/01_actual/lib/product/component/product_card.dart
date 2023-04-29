@@ -13,7 +13,7 @@ class ProductCard extends StatelessWidget {
   factory ProductCard.fromModel({
     required RestaurantProductModel model,
   }) {
-    print('imgUrl ->${model.imgUrl}');
+    // print('imgUrl ->${model.imgUrl}');
 
     return ProductCard(
         image: Image.network(
