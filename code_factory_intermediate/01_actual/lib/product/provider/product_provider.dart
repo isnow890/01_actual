@@ -1,0 +1,44 @@
+import 'package:actual/common/model/cursor_pagination_model.dart';
+import 'package:actual/common/provider/pagination_provider.dart';
+import 'package:actual/product/model/product_model.dart';
+import 'package:actual/product/repository/product_repository.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+
+
+final productProvider = StateNotifierProvider<ProductStateNotifier, CursorPaginationBase>((ref) {
+  final repository = ref.watch(productRepositoryProvider);
+  final notifier = ProductStateNotifier(repository: repository);
+  return notifier;
+});
+
+
+
+class ProductStateNotifier extends PaginationProvider<ProductModel, ProductRepository>{
+  ProductStateNotifier({required super.repository});
+}
+
+//
+//
+// final restaurantProvider =
+// StateNotifierProvider<RestaurantStateNotifier, CursorPaginationBase>(
+//       (ref) {
+//     final repository = ref.watch(restaurantRepositoryProvider);
+//     final notifier = RestaurantStateNotifier(repository: repository);
+//     return notifier;
+//   },
+// );
+
+
+
+// final restaurantRatingProvider =
+// StateNotifierProvider.family<RestaurantRatingStateNotifier, CursorPaginationBase,String>(
+//         (ref,id) {
+//       final repo = ref.watch(restaurantRatingRepositoryProvider(id));
+//       return RestaurantRatingStateNotifier(repository: repo);
+//     });
+//
+// class RestaurantRatingStateNotifier
+//     extends PaginationProvider<RatingModel, RestaurantRatingRepository> {
+//   RestaurantRatingStateNotifier({required super.repository});
+// }

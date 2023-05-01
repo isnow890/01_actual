@@ -2,6 +2,7 @@ import 'package:actual/common/const/colors.dart';
 import 'package:actual/common/layout/default_layout.dart';
 import 'package:flutter/material.dart';
 
+import '../../product/view/product_tab.dart';
 import '../../restaurant/view/restaurant_screen.dart';
 
 class RootTab extends StatefulWidget {
@@ -12,12 +13,11 @@ class RootTab extends StatefulWidget {
 }
 
 //controller 사용 위하여 with SingleTickerProviderStateMixin 선언
-class _RootTabState extends State<RootTab> with SingleTickerProviderStateMixin{
-
-
+class _RootTabState extends State<RootTab> with SingleTickerProviderStateMixin {
   //나중에 입력이 됨. 그러므로 late 사용
   late TabController controller;
   int index = 0;
+
   //initState에 TabController 등록
   @override
   void initState() {
@@ -28,8 +28,7 @@ class _RootTabState extends State<RootTab> with SingleTickerProviderStateMixin{
     controller.addListener(tabListener);
   }
 
-
-  void tabListener(){
+  void tabListener() {
     setState(() => index = controller.index);
   }
 
@@ -39,8 +38,6 @@ class _RootTabState extends State<RootTab> with SingleTickerProviderStateMixin{
     controller.removeListener(tabListener);
     super.dispose();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -74,16 +71,20 @@ class _RootTabState extends State<RootTab> with SingleTickerProviderStateMixin{
       ),
       title: '코팩 딜리버리',
       //TabBar
-      child:  TabBarView(
-        //좌우로 스와이핑 기능 막기.
-        physics: NeverScrollableScrollPhysics(),
+      child: TabBarView(
+          //좌우로 스와이핑 기능 막기.
+          physics: NeverScrollableScrollPhysics(),
           controller: controller,
           children: [
-    RestaurantScreen(),
-    Container(child:Center(child: Text('음식')),),
-    Container(child:Center(child: Text('주문')),),
-    Container(child:Center(child: Text('프로필')),)
-    ]),
+            RestaurantScreen(),
+            ProductTab(),
+            Container(
+              child: Center(child: Text('주문')),
+            ),
+            Container(
+              child: Center(child: Text('프로필')),
+            )
+          ]),
     );
   }
 }
