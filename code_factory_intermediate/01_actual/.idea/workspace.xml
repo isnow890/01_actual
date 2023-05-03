@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="PaginationListView 위젯 작업하기">
+    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="Product Tab Pagination">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product/component/product_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product/component/product_card.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/product/view/product_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product/view/product_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/restaurant/view/restaurant_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/restaurant/view/restaurant_detail_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682954226612</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Product Tab Pagination">
+      <created>1683126761280</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1683126761280</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,13 +240,58 @@
     <MESSAGE value="RatingPagination FetchMore 적용하기" />
     <MESSAGE value="Product Pagination 세팅하기" />
     <MESSAGE value="PaginationListView 위젯 작업하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="PaginationListView 위젯 작업하기" />
+    <MESSAGE value="Product Tab Pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="Product Tab Pagination" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart</url>
+          <line>63</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart</url>
+          <line>18</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart</url>
+          <line>40</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart</url>
+          <line>48</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart</url>
+          <line>49</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart</url>
+          <line>73</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart</url>
+          <line>79</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="FlutterRunConfigurationType">
         <watch expression="options" />
+        <watch expression="id" />
+        <watch expression="state.data" />
       </configuration>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart" line="18">
+        <watch expression="id" />
+      </inline-watch>
     </watches-manager>
   </component>
 </project>
