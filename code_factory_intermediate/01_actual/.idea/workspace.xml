@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="UserMeRepository 생성하기">
-      <change afterPath="$PROJECT_DIR$/lib/user/provider/user_me_provider.dart" afterDir="false" />
+    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="Get Me API 작업하기">
+      <change afterPath="$PROJECT_DIR$/lib/common/model/login_response.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/common/model/token_response.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/user/repository/auth_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user/model/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/model/user_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user/repository/user_me_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/repository/user_me_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/utils/data_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/utils/data_utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user/provider/user_me_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/provider/user_me_provider.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683383665581</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Get Me API 작업하기">
+      <created>1683386546742</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1683386546742</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,7 +263,8 @@
     <MESSAGE value="Product Tab Pagination" />
     <MESSAGE value="존재하지않는 데이터 캐시에 입력하기" />
     <MESSAGE value="UserMeRepository 생성하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserMeRepository 생성하기" />
+    <MESSAGE value="Get Me API 작업하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get Me API 작업하기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
