@@ -19,7 +19,6 @@ final repository = UserMeRepository(dio,baseUrl: 'http://$ip/user/me');
 @RestApi()
 abstract class UserMeRepository {
 factory UserMeRepository(Dio dio, {String baseUrl})= _UserMeRepository;
-
 @GET('/')
   @Headers({'accessToken':'true'})
   Future<UserModel> getMe();

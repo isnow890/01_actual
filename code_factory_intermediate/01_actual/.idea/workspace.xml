@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="존재하지않는 데이터 캐시에 입력하기">
-      <change afterPath="$PROJECT_DIR$/lib/user/repository/user_me_repository.dart" afterDir="false" />
+    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="UserMeRepository 생성하기">
+      <change afterPath="$PROJECT_DIR$/lib/user/provider/user_me_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user/model/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/model/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user/repository/user_me_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/repository/user_me_repository.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +68,7 @@
       <recent name="D:\repos\code_factory_intermediate\01_actual\lib\asset" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\repository\study\flutter\code_factory_intermediate\actual\code_factory_intermediate\01_actual\lib\user\provider" />
       <recent name="D:\repos\code_factory_intermediate\01_actual" />
     </key>
   </component>
@@ -210,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683130312897</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="UserMeRepository 생성하기">
+      <created>1683383665581</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1683383665581</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,7 +253,8 @@
     <MESSAGE value="PaginationListView 위젯 작업하기" />
     <MESSAGE value="Product Tab Pagination" />
     <MESSAGE value="존재하지않는 데이터 캐시에 입력하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="존재하지않는 데이터 캐시에 입력하기" />
+    <MESSAGE value="UserMeRepository 생성하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserMeRepository 생성하기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
