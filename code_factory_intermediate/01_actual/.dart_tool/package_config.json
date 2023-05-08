@@ -189,7 +189,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///c:/src/flutter/packages/flutter",
+      "rootUri": "file:///C:/src/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -243,13 +243,13 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///c:/src/flutter/packages/flutter_test",
+      "rootUri": "file:///C:/src/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///c:/src/flutter/packages/flutter_web_plugins",
+      "rootUri": "file:///C:/src/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -270,6 +270,12 @@
       "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/glob-2.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.15"
+    },
+    {
+      "name": "go_router",
+      "rootUri": "file:///C:/Users/isnow/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
     },
     {
       "name": "graphs",
@@ -453,7 +459,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///c:/src/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///C:/src/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -572,7 +578,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-05-01T14:32:22.634116Z",
+  "generated": "2023-05-08T13:59:38.398843Z",
   "generator": "pub",
   "generatorVersion": "2.19.6"
 }

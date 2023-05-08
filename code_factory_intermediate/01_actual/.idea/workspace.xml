@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="Get Me API 작업하기">
-      <change afterPath="$PROJECT_DIR$/lib/common/model/login_response.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/common/model/token_response.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/user/repository/auth_repository.dart" afterDir="false" />
+    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="Login과 Token Refresh Repository">
+      <change afterPath="$PROJECT_DIR$/lib/user/provider/auth_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/utils/data_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/utils/data_utils.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user/provider/user_me_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/provider/user_me_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user/repository/auth_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/repository/auth_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683386546742</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Login과 Token Refresh Repository">
+      <created>1683388364036</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1683388364036</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,7 +273,8 @@
     <MESSAGE value="존재하지않는 데이터 캐시에 입력하기" />
     <MESSAGE value="UserMeRepository 생성하기" />
     <MESSAGE value="Get Me API 작업하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get Me API 작업하기" />
+    <MESSAGE value="Login과 Token Refresh Repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login과 Token Refresh Repository" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
