@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="AuthProvider 작업하기">
-      <change afterPath="$PROJECT_DIR$/lib/common/provider/go_router.dart" afterDir="false" />
+    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="GoRouter 적용하기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/view/root_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/view/root_tab.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user/provider/auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/provider/auth_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user/view/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/view/login_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user/view/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/view/splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user/provider/user_me_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/provider/user_me_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user/repository/auth_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/repository/auth_repository.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683555089607</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="GoRouter 적용하기">
+      <created>1683557854811</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1683557854811</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,7 +284,8 @@
     <MESSAGE value="Get Me API 작업하기" />
     <MESSAGE value="Login과 Token Refresh Repository" />
     <MESSAGE value="AuthProvider 작업하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="AuthProvider 작업하기" />
+    <MESSAGE value="GoRouter 적용하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="GoRouter 적용하기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
