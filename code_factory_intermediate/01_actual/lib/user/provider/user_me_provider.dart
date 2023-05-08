@@ -37,4 +37,8 @@ class UserMeStateNotifier extends StateNotifier<UserModelBase?> {
     final resp = await repository.getMe();
     state = resp;
   }
+
+  Future<UserModelBase> login() async{
+
+  }
 }

@@ -18,6 +18,9 @@ import '../../common/component/custom_text_form_field.dart';
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
+
+  static String get routeName=>'login';
+
   @override
   //State -> ConsumerState로 변경
   ConsumerState<LoginScreen> createState() => _LoginScreenState();

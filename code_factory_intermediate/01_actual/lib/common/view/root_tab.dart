@@ -7,6 +7,7 @@ import '../../restaurant/view/restaurant_screen.dart';
 
 class RootTab extends StatefulWidget {
   const RootTab({Key? key}) : super(key: key);
+  static String get routeName =>'home';
 
   @override
   State<RootTab> createState() => _RootTabState();
@@ -14,6 +15,9 @@ class RootTab extends StatefulWidget {
 
 //controller 사용 위하여 with SingleTickerProviderStateMixin 선언
 class _RootTabState extends State<RootTab> with SingleTickerProviderStateMixin {
+
+
+
   //나중에 입력이 됨. 그러므로 late 사용
   late TabController controller;
   int index = 0;
