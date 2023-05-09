@@ -4,6 +4,7 @@ import 'package:actual/restaurant/provider/restaurant_provider.dart';
 import 'package:actual/restaurant/view/restaurant_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../common/model/cursor_pagination_model.dart';
 import '../../common/utils/pagination_utils.dart';
@@ -14,19 +15,21 @@ class RestaurantScreen extends StatelessWidget {
 
 
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context,) {
     return PaginationListView(
         provider: restaurantProvider,
         itemBuilder: <RestaurantModel>(_, index, model) {
           return GestureDetector(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => RestaurantDetailScreen(
-                  id: model.id,
-                ),
-              ));
+              //route 사용시
+              // context.go('restaurant/$model.id');
+              context.goNamed(RestaurantDetailScreen.routeName,
+                pathParameters: {'rid':model.id,});
+              // Navigator.of(context).push(MaterialPageRoute(
+              //   builder: (context) => RestaurantDetailScreen(
+              //     id: model.id,
+              //   ),
+              // ));
             },
             child: RestaurantCard.fromModel(
               model: model,

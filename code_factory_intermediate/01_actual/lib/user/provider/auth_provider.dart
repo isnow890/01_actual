@@ -73,7 +73,7 @@ class AuthProvider extends ChangeNotifier {
             GoRoute(
               //파라메터 입력
               path: 'restaurant/:rid',
-
+              name: RestaurantDetailScreen.routeName,
               builder: (context, state) {
                 //path의 :rid 값을 가져옴.
                 return RestaurantDetailScreen(id: state.pathParameters['rid']!,);
