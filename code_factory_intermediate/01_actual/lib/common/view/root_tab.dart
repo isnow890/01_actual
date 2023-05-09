@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../product/view/product_screen.dart';
 import '../../restaurant/view/restaurant_screen.dart';
+import '../../user/view/profile_screen.dart';
 
 class RootTab extends StatefulWidget {
   const RootTab({Key? key}) : super(key: key);
@@ -85,9 +86,7 @@ class _RootTabState extends State<RootTab> with SingleTickerProviderStateMixin {
             Container(
               child: Center(child: Text('주문')),
             ),
-            Container(
-              child: Center(child: Text('프로필')),
-            )
+            ProfileScreen(),
           ]),
     );
   }

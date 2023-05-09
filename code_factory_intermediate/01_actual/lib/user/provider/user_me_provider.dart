@@ -54,6 +54,7 @@ class UserMeStateNotifier extends StateNotifier<UserModelBase?> {
       await storage.write(key: ACCESS_TOKEN_KEY, value: resp.accessToken);
 
       final userResp = await repository.getMe();
+      state = userResp;
       return userResp;
     } catch (e) {
       state = UserModelError(message: '로그인에 실패했습니다.');
@@ -62,11 +63,11 @@ class UserMeStateNotifier extends StateNotifier<UserModelBase?> {
   }
 
   //로그아웃 로직
-  Future<void> logout() async{
-    state=null;
+  Future<void> logout() async {
+    state = null;
     Future.wait([
-    storage.delete(key: REFRESH_TOKEN_KEY),
-    storage.delete(key: ACCESS_TOKEN_KEY),
+      storage.delete(key: REFRESH_TOKEN_KEY),
+      storage.delete(key: ACCESS_TOKEN_KEY),
     ]);
   }
 }

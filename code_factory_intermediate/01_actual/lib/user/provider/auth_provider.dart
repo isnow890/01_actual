@@ -67,7 +67,7 @@ class AuthProvider extends ChangeNotifier {
         GoRoute(
           path: '/',
           name: RootTab.routeName,
-          builder: (context, state) => SplashScreen(),
+          builder: (context, state) => RootTab(),
           routes: [
             //상세페이지를 위하여 등록함.
             GoRoute(
@@ -89,7 +89,7 @@ class AuthProvider extends ChangeNotifier {
         GoRoute(
           path: '/login',
           name: LoginScreen.routeName,
-          builder: (context, state) => SplashScreen(),
+          builder: (context, state) => LoginScreen(),
         ),
       ];
 }
