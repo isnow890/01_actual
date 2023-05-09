@@ -3,22 +3,25 @@
 // 3)에러가 났을때
 
 import 'package:actual/common/secure_storage/secure_storage.dart';
+import 'package:actual/user/provider/user_me_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import '../../user/provider/auth_provider.dart';
 import '../const/data.dart';
 
 final dioProvider = Provider<Dio>((ref) {
   final dio = Dio();
   final storage = ref.watch(secureStorageProvider);
-  dio.interceptors.add(CustomInterceptor(storage: storage));
+  dio.interceptors.add(CustomInterceptor(storage: storage, ref: ref));
   return dio;
 });
 
 class CustomInterceptor extends Interceptor {
   final FlutterSecureStorage storage;
+  final Ref ref;
 
-  CustomInterceptor({required this.storage});
+  CustomInterceptor({required this.ref, required this.storage});
 
   // 1)요청을 보낼때
   // 로그로 사용할 수도 있음.
@@ -55,12 +58,12 @@ class CustomInterceptor extends Interceptor {
   // 2)응답을 받을때
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    print('[RES] [${response.requestOptions.method}] ${response.requestOptions.uri}');
+    print(
+        '[RES] [${response.requestOptions.method}] ${response.requestOptions.uri}');
 
     // TODO: implement onResponse
     return super.onResponse(response, handler);
   }
-
 
 // 3)에러가 났을때
   @override
@@ -102,9 +105,10 @@ class CustomInterceptor extends Interceptor {
         final options = err.requestOptions;
 
         //토큰 변경하기
-        options.headers.addAll({'authorization':'Bearer $accessToken'});
+        options.headers.addAll({'authorization': 'Bearer $accessToken'});
 
-        await storage.write(key: ACCESS_TOKEN_KEY, value: resp.data['accessToken']);
+        await storage.write(
+            key: ACCESS_TOKEN_KEY, value: resp.data['accessToken']);
 
         //요청 재전송 (토큰 새로 발급 후 다시 실행)
         final response = await dio.fetch(options);
@@ -112,7 +116,16 @@ class CustomInterceptor extends Interceptor {
         //요청이 성공했다는 상태를 반환함.
         return handler.resolve(response);
         // await storage.write(key: REFRESH_TOKEN_KEY, value: resp.data['refreshToken']);
-      }on DioError catch (e) {
+      } on DioError catch (e) {
+        //Circular dependency Error
+        //A,B
+        //A->B의 친구
+        //B-A의 친구
+        //A-B-A-B-A-B
+        //상호 참조하므로 에러 발생 근데 난 발생 안함.
+        //userMeProvider와 dio가 상호 참조하고 있음
+
+        ref.read(authProvider.notifier).logout();
         handler.reject(e);
       }
     }

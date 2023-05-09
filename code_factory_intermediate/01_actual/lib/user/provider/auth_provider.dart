@@ -92,4 +92,9 @@ class AuthProvider extends ChangeNotifier {
           builder: (context, state) => LoginScreen(),
         ),
       ];
+
+  //
+  void logout(){
+    ref.read(userMeProvider.notifier).logout();
+  }
 }
