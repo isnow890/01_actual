@@ -10,15 +10,12 @@ class BasketItemModel {
 
   BasketItemModel({required this.product, required this.count});
 
-
   BasketItemModel copyWith({
     ProductModel? product, int? count
   }) {
     return BasketItemModel(
         product: product ?? this.product, count: count ?? this.count);
   }
-
-
 
   factory BasketItemModel.fromJson(Map<String, dynamic> json)
   => _$BasketItemModelFromJson(json);
