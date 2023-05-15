@@ -21,3 +21,4 @@ class BasketItemModel {
   => _$BasketItemModelFromJson(json);
 
 }
+

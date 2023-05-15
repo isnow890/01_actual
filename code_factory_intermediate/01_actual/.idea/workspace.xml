@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="BasketProvider 작업하기">
+    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="장바구니 기능 적용하기">
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -13,11 +13,10 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/.last_build_id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/layout/default_layout.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/layout/default_layout.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/restaurant/view/restaurant_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/restaurant/view/restaurant_detail_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/dio/dio.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/dio/dio.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user/model/basket_item_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/model/basket_item_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user/model/patch_basket_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/model/patch_basket_body.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user/provider/basket_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/provider/basket_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
@@ -281,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684076403850</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="장바구니 기능 적용하기">
+      <created>1684078392853</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1684078392853</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,7 +302,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
     <MESSAGE value="2강 시작" />
     <MESSAGE value="텍스트필드 디자인하기" />
     <MESSAGE value="중간 저장" />
@@ -321,7 +326,8 @@
     <MESSAGE value="GoRouter 적용하기" />
     <MESSAGE value="일반 Navigation에서 GoRouter로 전환하기" />
     <MESSAGE value="BasketProvider 작업하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="BasketProvider 작업하기" />
+    <MESSAGE value="장바구니 기능 적용하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="장바구니 기능 적용하기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -390,6 +396,26 @@
           <url>file://$PROJECT_DIR$/lib/user/provider/auth_provider.dart</url>
           <line>58</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/user/repository/user_me_repository.g.dart</url>
+          <line>93</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/user/repository/user_me_repository.g.dart</url>
+          <line>90</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/user/repository/user_me_repository.dart</url>
+          <line>34</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/user/repository/user_me_repository.g.dart</url>
+          <line>74</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
