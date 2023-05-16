@@ -8,6 +8,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../restaurant/view/basket_screen.dart';
+
 
 
 final authProvider = ChangeNotifierProvider<AuthProvider>((ref) {
@@ -78,7 +80,7 @@ class AuthProvider extends ChangeNotifier {
                 //path의 :rid 값을 가져옴.
                 return RestaurantDetailScreen(id: state.pathParameters['rid']!,);
               },
-            )
+            ),
           ],
         ),
         GoRoute(
@@ -91,6 +93,16 @@ class AuthProvider extends ChangeNotifier {
           name: LoginScreen.routeName,
           builder: (context, state) => LoginScreen(),
         ),
+    GoRoute(
+      path: '/basket',
+      name: BasketScreen.routeName,
+      builder: (context, state) => BasketScreen(),
+    ),
+
+
+
+
+
       ];
 
   //
