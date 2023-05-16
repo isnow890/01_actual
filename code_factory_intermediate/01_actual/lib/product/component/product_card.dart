@@ -112,16 +112,19 @@ class ProductCard extends ConsumerWidget {
           ),
         ),
         if (onSubtract != null && onAdd != null)
-          _Footer(
-              total: (basket.firstWhere((e) => e.product.id == id).count *
-                      basket
-                          .firstWhere((e) => e.product.id == id)
-                          .product
-                          .price)
-                  .toString(),
-              count: basket.firstWhere((e) => e.product.id == id).count,
-              onSubtract: onSubtract!,
-              onAdd: onAdd!),
+          Padding(
+            padding: const EdgeInsets.only(top:8.0),
+            child: _Footer(
+                total: (basket.firstWhere((e) => e.product.id == id).count *
+                        basket
+                            .firstWhere((e) => e.product.id == id)
+                            .product
+                            .price)
+                    .toString(),
+                count: basket.firstWhere((e) => e.product.id == id).count,
+                onSubtract: onSubtract!,
+                onAdd: onAdd!),
+          ),
       ],
     );
   }
@@ -147,7 +150,7 @@ class _Footer extends StatelessWidget {
       children: [
         Expanded(
           child: Text(
-            '총액  \$total',
+            '총액  ₩${total}',
             style: TextStyle(
               color: PRIMARY_COLOR,
               fontWeight: FontWeight.w500,
@@ -156,7 +159,8 @@ class _Footer extends StatelessWidget {
         ),
         Row(
           children: [
-            renderButton(icon: Icons.add, onTap: () {}),
+            renderButton(icon: Icons.remove, onTap: this.onSubtract),
+            const SizedBox(width: 8.0,),
             Text(
               count.toString(),
               style: TextStyle(
@@ -164,7 +168,8 @@ class _Footer extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            renderButton(icon: Icons.remove, onTap: () {}),
+            const SizedBox(width: 8.0,),
+            renderButton(icon: Icons.add, onTap: this.onAdd),
           ],
         )
       ],

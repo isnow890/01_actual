@@ -10,8 +10,6 @@ import 'package:go_router/go_router.dart';
 
 import '../../restaurant/view/basket_screen.dart';
 
-
-
 final authProvider = ChangeNotifierProvider<AuthProvider>((ref) {
   return AuthProvider(ref: ref);
 });
@@ -34,7 +32,7 @@ class AuthProvider extends ChangeNotifier {
   //토큰이 존재하는지 확인하고
   //로그인 스크린으로 보내줄지
   //홈 스크린으로 보내줄지 확인하는 과정이 필요하다.
-  String? redirectLogic(_,GoRouterState state) {
+  String? redirectLogic(_, GoRouterState state) {
     final UserModelBase? user = ref.read(userMeProvider);
 
     final logginIn = state.location == '/login';
@@ -78,7 +76,9 @@ class AuthProvider extends ChangeNotifier {
               name: RestaurantDetailScreen.routeName,
               builder: (context, state) {
                 //path의 :rid 값을 가져옴.
-                return RestaurantDetailScreen(id: state.pathParameters['rid']!,);
+                return RestaurantDetailScreen(
+                  id: state.pathParameters['rid']!,
+                );
               },
             ),
           ],
@@ -93,20 +93,15 @@ class AuthProvider extends ChangeNotifier {
           name: LoginScreen.routeName,
           builder: (context, state) => LoginScreen(),
         ),
-    GoRoute(
-      path: '/basket',
-      name: BasketScreen.routeName,
-      builder: (context, state) => BasketScreen(),
-    ),
-
-
-
-
-
+        GoRoute(
+          path: '/basket',
+          name: BasketScreen.routeName,
+          builder: (context, state) => BasketScreen(),
+        ),
       ];
 
   //
-  void logout(){
+  void logout() {
     ref.read(userMeProvider.notifier).logout();
   }
 }
