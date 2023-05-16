@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="장바구니 UI 마무리하기">
-      <change afterPath="$PROJECT_DIR$/lib/order/model/order_model.dart" afterDir="false" />
+    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="OrderModel 생성하기">
+      <change afterPath="$PROJECT_DIR$/lib/order/model/post_order_body.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/order/repository/order_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/.last_build_id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/utils/data_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/utils/data_utils.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/restaurant/repository/restaurant_repository.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/restaurant/repository/restaurant_repository.g.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684243563966</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="OrderModel 생성하기">
+      <created>1684249299946</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1684249299946</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,7 +304,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="텍스트필드 디자인하기" />
     <MESSAGE value="중간 저장" />
     <MESSAGE value="Dio로 Auth API 요청해보기" />
     <MESSAGE value="간단한 로그인 시스템 만들어보기" />
@@ -324,7 +328,8 @@
     <MESSAGE value="BasketProvider 작업하기" />
     <MESSAGE value="장바구니 기능 적용하기" />
     <MESSAGE value="장바구니 UI 마무리하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="장바구니 UI 마무리하기" />
+    <MESSAGE value="OrderModel 생성하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="OrderModel 생성하기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
