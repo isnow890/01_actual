@@ -1,4 +1,5 @@
 import 'package:actual/common/view/root_tab.dart';
+import 'package:actual/restaurant/view/order_done_screen.dart';
 import 'package:actual/restaurant/view/restaurant_detail_screen.dart';
 import 'package:actual/user/model/user_model.dart';
 import 'package:actual/user/provider/user_me_provider.dart';
@@ -97,6 +98,11 @@ class AuthProvider extends ChangeNotifier {
           path: '/basket',
           name: BasketScreen.routeName,
           builder: (context, state) => BasketScreen(),
+        ),
+        GoRoute(
+          path: '/order_done',
+          name: OrderDoneScreen.routeName,
+          builder: (context, state) => OrderDoneScreen(),
         ),
       ];
 

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="OrderRepository 작업하기">
-      <change afterPath="$PROJECT_DIR$/lib/order/provider/order_provider.dart" afterDir="false" />
+    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="OrderProvider 작업하기">
+      <change afterPath="$PROJECT_DIR$/lib/restaurant/view/order_done_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/order/model/post_order_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/model/post_order_body.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/restaurant/view/basket_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/restaurant/view/basket_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user/provider/auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/provider/auth_provider.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684250004469</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="OrderProvider 작업하기">
+      <created>1684252582732</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1684252582732</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -312,7 +319,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dio로 Auth API 요청해보기" />
     <MESSAGE value="간단한 로그인 시스템 만들어보기" />
     <MESSAGE value="SplashScreen 구현해보기&#10;AppBar와 TabBar 만들기" />
     <MESSAGE value="SplashScreen 구현해보기 AppBar와 TabBar 만들기" />
@@ -337,7 +343,8 @@
     <MESSAGE value="장바구니 UI 마무리하기" />
     <MESSAGE value="OrderModel 생성하기" />
     <MESSAGE value="OrderRepository 작업하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="OrderRepository 작업하기" />
+    <MESSAGE value="OrderProvider 작업하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="OrderProvider 작업하기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -401,6 +408,11 @@
           <url>file://$PROJECT_DIR$/lib/user/repository/user_me_repository.g.dart</url>
           <line>74</line>
           <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/order/provider/order_provider.dart</url>
+          <line>15</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
