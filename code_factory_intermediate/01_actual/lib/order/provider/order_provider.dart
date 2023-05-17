@@ -1,3 +1,5 @@
+import 'package:actual/common/model/cursor_pagination_model.dart';
+import 'package:actual/common/provider/pagination_provider.dart';
 import 'package:actual/order/model/order_model.dart';
 import 'package:actual/order/model/order_model.dart';
 import 'package:actual/order/model/post_order_body.dart';
@@ -10,18 +12,17 @@ import '../model/order_model.dart';
 import '../repository/order_repository.dart';
 
 final orderProvider =
-    StateNotifierProvider<OrderStateNotifier, List<OrderModel>>((ref) {
+    StateNotifierProvider<OrderStateNotifier, CursorPaginationBase>((ref) {
       final repo  = ref.watch(orderRepositoryProvider);
 
   return OrderStateNotifier(ref: ref, repository: repo);
 });
 
-class OrderStateNotifier extends StateNotifier<List<OrderModel>> {
+class OrderStateNotifier extends PaginationProvider<OrderModel, OrderRepository> {
   //ref를 불러와서 provider를 사용할 수 있음.
   final Ref ref;
-  final OrderRepository repository;
 
-  OrderStateNotifier({required this.repository, required this.ref}) : super([]);
+  OrderStateNotifier({required super.repository, required this.ref});
 
   Future<bool> postOrder() async {
     try {

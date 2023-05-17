@@ -1,5 +1,5 @@
 import 'package:actual/common/view/root_tab.dart';
-import 'package:actual/restaurant/view/order_done_screen.dart';
+import 'package:actual/order/view/order_done_screen.dart';
 import 'package:actual/restaurant/view/restaurant_detail_screen.dart';
 import 'package:actual/user/model/user_model.dart';
 import 'package:actual/user/provider/user_me_provider.dart';

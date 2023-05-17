@@ -2,7 +2,7 @@ import 'package:actual/common/const/colors.dart';
 import 'package:actual/common/layout/default_layout.dart';
 import 'package:actual/order/provider/order_provider.dart';
 import 'package:actual/product/component/product_card.dart';
-import 'package:actual/restaurant/view/order_done_screen.dart';
+import 'package:actual/order/view/order_done_screen.dart';
 import 'package:actual/user/provider/basket_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

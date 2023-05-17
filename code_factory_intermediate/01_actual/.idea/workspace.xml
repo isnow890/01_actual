@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="OrderProvider 작업하기">
-      <change afterPath="$PROJECT_DIR$/lib/restaurant/view/order_done_screen.dart" afterDir="false" />
+    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="결제함수 마무리하기">
+      <change afterPath="$PROJECT_DIR$/lib/order/component/order_card.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/order/view/order_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/view/root_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/view/root_tab.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/order/provider/order_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/provider/order_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/order/repository/order_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/repository/order_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/restaurant/view/basket_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/restaurant/view/basket_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/restaurant/view/order_done_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/view/order_done_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user/provider/auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/provider/auth_provider.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,25 +55,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/repository/study/flutter/code_factory_intermediate/actual/code_factory_intermediate/01_actual&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "D:/repository/study/flutter/code_factory_intermediate/actual/code_factory_intermediate/01_actual",
+    "settings.editor.selected.configurable": "editor.preferences.import",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\repos\code_factory_intermediate\01_actual\lib\asset" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\repository\study\flutter\code_factory_intermediate\actual\code_factory_intermediate\01_actual\lib\order" />
+      <recent name="D:\repository\study\flutter\code_factory_intermediate\actual\code_factory_intermediate\01_actual\lib\order\view" />
       <recent name="D:\repository\study\flutter\code_factory_intermediate\actual\code_factory_intermediate\01_actual\lib\user\provider" />
       <recent name="D:\repos\code_factory_intermediate\01_actual" />
     </key>
@@ -304,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684252582732</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="결제함수 마무리하기">
+      <created>1684253771114</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1684253771114</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,7 +334,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="간단한 로그인 시스템 만들어보기" />
     <MESSAGE value="SplashScreen 구현해보기&#10;AppBar와 TabBar 만들기" />
     <MESSAGE value="SplashScreen 구현해보기 AppBar와 TabBar 만들기" />
     <MESSAGE value="Dio onRequest Interceptor 작업하기" />
@@ -344,7 +358,8 @@
     <MESSAGE value="OrderModel 생성하기" />
     <MESSAGE value="OrderRepository 작업하기" />
     <MESSAGE value="OrderProvider 작업하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="OrderProvider 작업하기" />
+    <MESSAGE value="결제함수 마무리하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="결제함수 마무리하기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -411,7 +426,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/order/provider/order_provider.dart</url>
-          <line>15</line>
+          <line>17</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
