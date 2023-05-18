@@ -85,35 +85,46 @@ class _PaginationListViewState<T extends IModelWithId>
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: ListView.separated(
-        controller: controller,
-        itemCount: cp!.data.length + 1,
-        separatorBuilder: (context, index) => SizedBox(
-          height: 16.0,
-        ),
-        itemBuilder: (context, index) {
-          if (index == cp.data.length) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16.0,
-                vertical: 8.0,
-              ),
-              child: Center(
-                  child: cp is CursorPaginationFetchingMore
-                      ? CircularProgressIndicator()
-                      : Text('마지막 데이터입니다.')),
-            );
-          }
-
-          //parsed
-          final pItem = cp.data[index];
-
-          return widget.itemBuilder(
-            context,
-            index,
-            pItem,
-          );
+      child: RefreshIndicator(
+        onRefresh: () async {
+          ref.read(widget.provider.notifier).paginate(
+                forceRefetch: true,
+              );
         },
+        child: ListView.separated(
+          //refreshIndicator 사용시 리스트뷰의 데이터가 스크롤할 정도로 없으면
+          //작동 하지 않음.
+          //그걸 강제로 하려면 physics에 아래 옵션 입력해야함.
+          physics: AlwaysScrollableScrollPhysics(),
+          controller: controller,
+          itemCount: cp!.data.length + 1,
+          separatorBuilder: (context, index) => SizedBox(
+            height: 16.0,
+          ),
+          itemBuilder: (context, index) {
+            if (index == cp.data.length) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 8.0,
+                ),
+                child: Center(
+                    child: cp is CursorPaginationFetchingMore
+                        ? CircularProgressIndicator()
+                        : Text('마지막 데이터입니다.')),
+              );
+            }
+
+            //parsed
+            final pItem = cp.data[index];
+
+            return widget.itemBuilder(
+              context,
+              index,
+              pItem,
+            );
+          },
+        ),
       ),
     );
   }
