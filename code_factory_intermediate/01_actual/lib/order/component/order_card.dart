@@ -42,6 +42,7 @@ class OrderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+const SizedBox(height: 16.0,),
         Text(
             '${orderDate.year}.${orderDate.month.toString().padLeft(2, '0')}.${orderDate.day.toString().padLeft(2, '0')} 주문완료'),
         Row(
@@ -54,8 +55,12 @@ class OrderCard extends StatelessWidget {
               width: 16,
             ),
             Column(
+              crossAxisAlignment:  CrossAxisAlignment.start,
               children: [
+
+
                 Text(
+
                   name,
                   style: TextStyle(
                     fontSize: 14,
