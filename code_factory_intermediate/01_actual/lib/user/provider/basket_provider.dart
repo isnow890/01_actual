@@ -1,33 +1,45 @@
 import 'package:actual/product/model/product_model.dart';
 import 'package:actual/user/model/basket_item_model.dart';
 import 'package:actual/user/model/patch_basket_body.dart';
+import 'package:debounce_throttle/debounce_throttle.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:collection/collection.dart';
 
 import '../repository/user_me_repository.dart';
 
 final basketProvider =
-    StateNotifierProvider<BasketProvider, List<BasketItemModel>>((ref) {
+StateNotifierProvider<BasketProvider, List<BasketItemModel>>((ref) {
   final repository = ref.watch(userMeRepositoryProvider);
   return BasketProvider(repository: repository);
 });
 
 class BasketProvider extends StateNotifier<List<BasketItemModel>> {
   final UserMeRepository repository;
+  final updateBasketDebounce = Debouncer(
+      Duration(seconds: 1), initialValue: null,
+      checkEquality: false);
+
 
   BasketProvider({
     required this.repository,
-  }) : super([]);
+  }) : super([]) {
+    updateBasketDebounce.values.listen((event) {
+      patchBasket();
+    });
+  }
+
+
 
   Future<void> patchBasket() async {
     await repository.patchBasket(
       body: PatchBasketBody(
         basket: state
             .map(
-              (e) => PatchBasketBodyBasket(
-            productId: e.product.id,
-            count: e.count,
-          ),
+              (e) =>
+              PatchBasketBodyBasket(
+                productId: e.product.id,
+                count: e.count,
+              ),
         )
             .toList(),
       ),
@@ -52,7 +64,7 @@ class BasketProvider extends StateNotifier<List<BasketItemModel>> {
     if (exists) {
       state = state
           .map((e) =>
-              e.product.id == product.id ? e.copyWith(count: e.count + 1) : e)
+      e.product.id == product.id ? e.copyWith(count: e.count + 1) : e)
           .toList();
     } else {
       state = [...state, BasketItemModel(product: product, count: 1)];
@@ -60,7 +72,11 @@ class BasketProvider extends StateNotifier<List<BasketItemModel>> {
 
     //Optimistic Response
     //응답이 성공할거라고 가정하고 상태를 먼저 업데이트함
-    await patchBasket();
+
+
+    //파라메터 필요없으니 null로 설정
+    updateBasketDebounce.setValue(null);
+    //await patchBasket();
   }
 
   Future<void> removeFromBasket({
@@ -81,7 +97,7 @@ class BasketProvider extends StateNotifier<List<BasketItemModel>> {
     if (!exists) return;
 
     final existingProduct =
-        state.firstWhere((element) => element.product.id == product.id);
+    state.firstWhere((element) => element.product.id == product.id);
 
     if (existingProduct.count == 1 || isDelete) {
       state =
@@ -89,11 +105,10 @@ class BasketProvider extends StateNotifier<List<BasketItemModel>> {
     } else {
       state = state
           .map((e) =>
-              e.product.id == product.id ? e.copyWith(count: e.count - 1) : e)
+      e.product.id == product.id ? e.copyWith(count: e.count - 1) : e)
           .toList();
     }
 
     await patchBasket();
-
   }
 }
