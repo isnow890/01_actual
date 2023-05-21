@@ -60,6 +60,7 @@ dev_dependencies:
   build_runner: ^2.0.0
   json_serializable: ^6.0.0
   retrofit_generator: '>=4.0.0 <5.0.0'
+  debounce_throttle: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

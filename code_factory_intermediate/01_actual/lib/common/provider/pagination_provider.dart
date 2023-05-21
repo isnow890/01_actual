@@ -1,18 +1,51 @@
 import 'package:actual/common/model/cursor_pagination_model.dart';
 import 'package:actual/common/model/model_with_id.dart';
 import 'package:actual/common/repository/base_pagination_repository.dart';
+import 'package:debounce_throttle/debounce_throttle.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../model/pagination_params.dart';
+
+class _PaginationInfo {
+  final int fetchCount;
+
+  // 추가로 데이터 더 가져오기.
+
+  // true - 추가로 데이터 더 가져옴
+  // false - 새로고침 (현재 상태를 덮어씌움)
+  final bool fetchMore;
+
+  // 강제로 다시 로딩하기
+  // true - CursorPaginationLoading()
+  // 화면에 있는 데이터를 다 지우고 로딩함.
+  final bool forceRefetch;
+
+  _PaginationInfo(
+      {this.fetchCount = 20,
+      this.fetchMore = false,
+      this.forceRefetch = false});
+}
 
 class PaginationProvider<T extends IModelWithId,
         U extends IBasePaginationRepository<T>>
     extends StateNotifier<CursorPaginationBase> {
   final U repository;
+  final paginationThrottle = Throttle(
+    Duration(seconds: 5), initialValue: _PaginationInfo(),
+    //값이 업데이트될때 throttle 사용여부
+    checkEquality: false,
+  );
 
   PaginationProvider({required this.repository})
-      : super(CursorPaginationLoading()){
+      : super(CursorPaginationLoading()) {
     paginate();
+
+    //리스너 생성
+    paginationThrottle.values.listen(
+      (state) {
+        _throttledPagination(state);
+      },
+    );
   }
 
   Future<void> paginate({
@@ -28,6 +61,26 @@ class PaginationProvider<T extends IModelWithId,
     // 화면에 있는 데이터를 다 지우고 로딩함.
     bool forceRefetch = false,
   }) async {
+    paginationThrottle.setValue(_PaginationInfo(
+        fetchCount: fetchCount,
+        fetchMore: fetchMore,
+        forceRefetch: forceRefetch));
+  }
+
+  _throttledPagination(_PaginationInfo info) async {
+    final int fetchCount = info.fetchCount;
+
+    // 추가로 데이터 더 가져오기.
+
+    // true - 추가로 데이터 더 가져옴
+    // false - 새로고침 (현재 상태를 덮어씌움)
+    final bool fetchMore = info.fetchMore;
+
+    // 강제로 다시 로딩하기
+    // true - CursorPaginationLoading()
+    // 화면에 있는 데이터를 다 지우고 로딩함.
+    final bool forceRefetch = info.forceRefetch;
+
     try {
       // 5가지 가능성
       // [상태가]
@@ -103,7 +156,7 @@ class PaginationProvider<T extends IModelWithId,
       } else {
         state = resp;
       }
-    } catch (e,stack) {
+    } catch (e, stack) {
       print(e);
       print(stack);
       state = CursorPaginationError(message: '데이터 못가져옴');
