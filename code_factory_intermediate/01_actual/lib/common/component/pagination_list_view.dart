@@ -8,10 +8,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 typedef PaginationWidgetBuilder<T extends IModelWithId> = Widget Function(
     BuildContext context, int index, T model);
 
-class PaginationListView<T extends IModelWithId>
-    extends ConsumerStatefulWidget {
-  final StateNotifierProvider<PaginationProvider, CursorPaginationBase>
-      provider;
+class PaginationListView<T extends IModelWithId> extends ConsumerStatefulWidget {
+
+  final StateNotifierProvider<PaginationProvider, CursorPaginationBase> provider;
 
   final PaginationWidgetBuilder<T> itemBuilder;
 
@@ -97,7 +96,7 @@ class _PaginationListViewState<T extends IModelWithId>
           //그걸 강제로 하려면 physics에 아래 옵션 입력해야함.
           physics: AlwaysScrollableScrollPhysics(),
           controller: controller,
-          itemCount: cp!.data.length + 1,
+          itemCount: cp!.data.length + 1,//마지막 페이지라는 것을 보여주기 위하여 1을 추가함.
           separatorBuilder: (context, index) => SizedBox(
             height: 16.0,
           ),

@@ -5,14 +5,29 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../repository/restaurant_rating_repository.dart';
 
-final restaurantRatingProvider =
-    StateNotifierProvider.family<RestaurantRatingStateNotifier, CursorPaginationBase,String>(
-        (ref,id) {
-          final repo = ref.watch(restaurantRatingRepositoryProvider(id));
-          return RestaurantRatingStateNotifier(repository: repo);
-        });
+//
+final restaurantRatingProvider = StateNotifierProvider.family<
+    RestaurantRatingStateNotifier, CursorPaginationBase, String>((ref, id) {
+  final repo = ref.watch(restaurantRatingRepositoryProvider(id));
+  return RestaurantRatingStateNotifier(repository: repo);
+});
+
+//원래는
+
+// class RestaurantRatingStateNotifier
+//     extends StateNotifier<CursorPaginationBase> {
+//   final RestaurantRatingRepository repository;
+//
+//   RestaurantRatingStateNotifier({required this.repository})
+//       : super(
+//           CursorPaginationLoading(),
+//         ) {
+//     repository.paginate();
+//   }
+// }
 
 class RestaurantRatingStateNotifier
+//제네릭 첫번째
     extends PaginationProvider<RatingModel, RestaurantRatingRepository> {
   RestaurantRatingStateNotifier({required super.repository});
 }

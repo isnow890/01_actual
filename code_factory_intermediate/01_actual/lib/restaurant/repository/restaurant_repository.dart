@@ -29,6 +29,8 @@ final restaurantRepositoryProvider = Provider<RestaurantRepository>((ref) {
 //RetroFit
 
 //3.RestApi Annotation 적용하기
+
+//113355 이렇게 상속하게 되면 IBasePaginationRepository 형태의 제네릭 사용 가능함.
 @RestApi()
 abstract class RestaurantRepository implements IBasePaginationRepository<RestaurantModel> {
   //4 생성자 넣기

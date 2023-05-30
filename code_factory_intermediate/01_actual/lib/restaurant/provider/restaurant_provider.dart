@@ -8,10 +8,14 @@ import '../model/restaurant_model.dart';
 import 'package:collection/collection.dart';
 
 //반환 RestaurantModel, 입력값 String
+//cache 사용
+
+///
 final restaurantDetailProvider =
     Provider.family<RestaurantModel?, String>((ref, id) {
   final state = ref.watch(restaurantProvider);
   //데이터가 리스트에 없으므로.
+  //이미 밑에 paginate 로직을 돌았으므로.
   if (state is! CursorPagination) {
     return null;
   }
@@ -42,6 +46,7 @@ class RestaurantStateNotifier
     }
 
     // state가 CursorPagination이 아닐때 그냥 리턴
+    //서버가 에러났을 경우
     if (state is! CursorPagination) {
       return;
     }

@@ -12,6 +12,9 @@ import '../model/restaurant_model.dart';
 
 part 'restaurant_rating_repository.g.dart';
 
+//ResApi 호출할때
+// http://ip/restaurant/:rid/rating
+//와 같이 :rid의 값을 받기 위하여 family로 생성함.
 final restaurantRatingRepositoryProvider =
     Provider.family<RestaurantRatingRepository, String>((ref, id) {
   final dio = ref.watch(dioProvider);

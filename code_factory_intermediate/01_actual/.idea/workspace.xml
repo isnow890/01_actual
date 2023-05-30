@@ -4,17 +4,27 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="결제함수 마무리하기">
-      <change afterPath="$PROJECT_DIR$/lib/order/component/order_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/order/view/order_screen.dart" afterDir="false" />
+    <list default="true" id="446ce1f9-8cf6-4574-baeb-66cc2d66d3ef" name="Changes" comment="OrderCard 작업하기">
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/view/root_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/view/root_tab.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/order/provider/order_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/provider/order_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/order/repository/order_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/repository/order_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/restaurant/view/basket_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/restaurant/view/basket_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/restaurant/view/order_done_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/view/order_done_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user/provider/auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/provider/auth_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/.last_build_id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/component/pagination_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/component/pagination_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/provider/pagination_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/provider/pagination_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/repository/base_pagination_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/repository/base_pagination_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/restaurant/provider/restaurant_rating_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/restaurant/provider/restaurant_rating_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/restaurant/repository/restaurant_rating_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/restaurant/repository/restaurant_rating_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/restaurant/repository/restaurant_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/restaurant/repository/restaurant_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user/view/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user/view/login_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,20 +65,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "D:/repository/study/flutter/code_factory_intermediate/actual/code_factory_intermediate/01_actual",
-    "settings.editor.selected.configurable": "editor.preferences.import",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/repository/study/flutter/code_factory_intermediate/actual/code_factory_intermediate/01_actual&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\repos\code_factory_intermediate\01_actual\lib\asset" />
@@ -366,22 +376,22 @@
       <breakpoints>
         <line-breakpoint type="Dart">
           <url>file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart</url>
-          <line>63</line>
+          <line>68</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint type="Dart">
           <url>file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart</url>
-          <line>40</line>
+          <line>44</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint type="Dart">
           <url>file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart</url>
-          <line>73</line>
+          <line>78</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint type="Dart">
           <url>file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart</url>
-          <line>79</line>
+          <line>84</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint type="Dart">
@@ -437,7 +447,7 @@
         <watch expression="id" />
         <watch expression="state.data" />
       </configuration>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart" line="18">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/lib/restaurant/provider/restaurant_provider.dart" line="22">
         <watch expression="id" />
       </inline-watch>
     </watches-manager>

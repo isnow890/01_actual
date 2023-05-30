@@ -3,6 +3,7 @@ import 'package:actual/common/model/model_with_id.dart';
 import '../model/cursor_pagination_model.dart';
 import '../model/pagination_params.dart';
 
+//Repository 일반화 클래스임
 abstract class IBasePaginationRepository<T extends IModelWithId> {
   Future<CursorPagination<T>> paginate({
     PaginationParams? paginationParams = const PaginationParams(),

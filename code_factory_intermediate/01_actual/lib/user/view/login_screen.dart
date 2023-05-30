@@ -43,8 +43,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     username = 'test@codefactory.ai';
     password = 'testtest';
 
-
-
   }
 
   @override
